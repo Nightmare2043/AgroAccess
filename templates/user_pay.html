@@ -1,0 +1,232 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vehicle Rental</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <meta content="Author" name="WebThemez">
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../static/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="../static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../static/css/style.css" rel="stylesheet"> 
+</head>
+
+<body id="body"> 
+ <header id="header">
+  <div class="container">
+
+    <div id="logo" class="pull-left">
+     <h1><a href="" id="body" class="scrollto"><span style="font-weight:bold">Agri Vehicle</span> Rental</a></h1> 
+     <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+   </div>
+   <div class="pull-left ml-4">
+    <!-- SEARCH FORM -->
+   <!-- <form class="form-inline "  action="search.php" method="post">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="text"  name="searchdata" placeholder="Search Vehicle" aria-label="Search" required="true">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" style="background-color: #49a3ff;" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>-->
+  </div>
+
+
+  <nav id="nav-menu-container">
+    <ul class="nav-menu">
+      <li class="menu-active"><a href="/userhome">Home</a></li>
+      <li><a href="/user_status">Status</a></li>
+      <li><a href="/logout">Logout</a></li>
+         
+    </ul>
+  </nav><!-- #nav-menu-container -->
+</div>
+  </header><!-- #header -->
+ <section id="innerBanner"> 
+  <div class="inner-content">
+    <h2><span>Farmer: {{user_data[1]}} </span><br>We provide high quality vehicles</h2>
+    <div> 
+    </div>
+  </div> 
+</section><!-- #Page Banner -->
+
+<main id="main">
+      
+	  
+	  <section id="services">
+        <div class="container">
+          <div class="section-header">
+            <h2>Payment</h2>
+			{% if msg=="ok" %}
+			<script language="javascript">
+			alert("Paid & Returned Success");
+			window.location.href="/user_status";
+			</script>
+			{% endif %}
+           <form name="form1" method="post">
+		   <div class="row">
+		   		<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				<!--<input type="text" name="card" maxlength="12" class="form-control" placeholder="Card No." required>-->
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<!--<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+        {% if msg %}
+          <p style="color: green;">{{ msg }}</p>
+        {% endif %}
+
+        <p>Original Amount: Rs. {{ amount }}</p>
+        {% if fine_amount > 0 %}
+            <p style="color: red;">Fine Applied: Rs. {{ fine_amount }}</p>
+        {% endif %}
+        <p>Total Payable: Rs. {{ total_amount }}</p>
+
+        <form method="POST">
+            <label>Enter Card Details:</label>
+            <input type="text" name="card" required class="form-control">
+            <br>
+            <button type="submit" class="btn btn-primary">Pay & Return</button>
+        </form>-->
+        <!--<div class="col-md-6 offset-md-3">
+          <div class="card shadow-lg p-4 rounded-3">
+              <h4 class="text-center mb-3">Payment Details</h4>
+              {% if msg %}
+                  <div class="alert alert-success text-center">{{ msg }}</div>
+              {% endif %}
+      
+              <div class="mb-3">
+                  <p class="fw-bold">Original Amount: <span class="text-primary">Rs. {{ amount }}</span></p>
+              </div>
+              
+              {% if fine_amount > 0 %}
+                  <div class="mb-3">
+                      <p class="fw-bold text-danger">Fine Applied: Rs. {{ fine_amount }}</p>
+                  </div>
+              {% endif %}
+              
+              <div class="mb-3">
+                  <p class="fw-bold">Total Payable: <span class="text-success">Rs. {{ total_amount }}</span></p>
+              </div>
+      
+              <form method="POST">
+                  <div class="mb-3">
+                      <label class="form-label">Enter Card Details:</label>
+                      <input type="text" name="card" required class="form-control shadow-sm" placeholder="XXXX-XXXX-XXXX-XXXX">
+                  </div>
+      
+                  <button type="submit" class="btn btn-success w-100 py-2">Pay & Return</button>
+              </form>
+          </div>
+      </div>-->
+      <div class="col-md-6 offset-md-3 d-flex justify-content-center align-items-center" style="height: 30vh;">
+        <div class="card shadow-lg p-4 rounded-3 text-center" style="width: 350px; border-radius: 10px;">
+            <h4 class="text-center mb-3">Payment Details</h4>
+    
+            {% if msg %}
+            
+                <div class="alert alert-success text-center">{{ msg }}</div>
+                <button class="btn btn-primary w-100 py-2" style="background-color: #28a745;" disabled>Payment Success</button>
+                <!--<button class="btn" style="background-color: #28a745; color: white;">Custom Green Button</button>-->
+
+            {% else %}
+                <div class="mb-3">
+                    <p class="fw-bold">Standard Amount: <span class="text-primary">Rs. {{ amount }}</span></p>
+                </div>
+    
+                {% if fine_amount > 0 %}
+                    <div class="mb-3">
+                        <p class="fw-bold text-danger">Overdue Charge: Rs. {{ fine_amount }}</p>
+                    </div>
+                {% endif %}
+    
+                <div class="mb-3">
+                    <p class="fw-bold">Total Payable: <span class="text-success">Rs. {{ total_amount }}</span></p>
+                </div>
+    
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Enter Card Details:</label>
+                        <input type="text" name="card" required class="form-control shadow-sm text-center" placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </div>
+    
+                    <button type="submit" class="btn btn-success w-100 py-2">Pay & Return</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+    
+      
+
+				
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-4">
+				<!--<input type="submit" name="btn" class="btn" value="Payment">-->
+				</div>
+		   </div>
+		   </form>
+         
+			 
+        </div>
+      </div>
+    </section><!-- #services -->
+	  
+	  
+	  
+    </main>
+    <footer id="footer">
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong>Agriculture Vehicle Booking System</strong>.
+    </div>
+  </div>
+</footer>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript  -->
+    <script src="../static/lib/jquery/jquery.min.js"></script>
+    <script src="../static/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/lib/easing/easing.min.js"></script>
+    <script src="../static/lib/superfish/hoverIntent.js"></script>
+    <script src="../static/lib/superfish/superfish.min.js"></script>
+    <script src="../static/lib/wow/wow.min.js"></script>
+    <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../static/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="../static/lib/sticky/sticky.js"></script> 
+    <script src="../static/contact/jqBootstrapValidation.js"></script>
+    <script src="../static/contact/contact_me.js"></script>
+    <script src="../static/js/main.js"></script>
+
+  </body>
+  </html>

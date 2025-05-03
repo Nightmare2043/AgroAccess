@@ -1,0 +1,487 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Agriculture Vehicle Rental</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <meta content="Author" name="WebThemez">
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../static/lib/font/font-awesome.css" rel="stylesheet" /> 
+  <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../static/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="../static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../static/css/style.css" rel="stylesheet"> 
+ <script language="javascript">
+function validate()
+{
+	if(document.form1.name.value=="")
+	{
+	alert("Enter the Name");
+	document.form1.name.focus();
+	return false;
+	}
+	if(document.form1.address.value=="")
+	{
+	alert("Enter the Address");
+	document.form1.address.focus();
+	return false;
+	}
+	if(document.form1.district.value=="")
+	{
+	alert("Enter the District");
+	document.form1.district.focus();
+	return false;
+	}
+	if(document.form1.mobile.value=="")
+	{
+	alert("Enter the Mobile No.");
+	document.form1.mobile.focus();
+	return false;
+	}
+	if(isNaN(document.form1.mobile.value))
+	{
+	alert("Invalid Mobile No.");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.mobile.value.length!=10)
+	{
+	alert("Mobile No. must be 10 digits!");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.email.value=="")
+	{
+	alert("Enter the Email");
+	document.form1.email.focus();
+	return false;
+	}
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.form1.email.value))  
+	{
+	
+	}
+	else
+	{
+	alert("Invalid E-mail!");
+	document.form1.email.select();
+	return false;
+	}
+	if(document.form1.uname.value=="")
+	{
+	alert("Enter the Username");
+	document.form1.uname.focus();
+	return false;
+	}
+	if(document.form1.pass.value=="")
+	{
+	alert("Enter the Password");
+	document.form1.pass.focus();
+	return false;
+	}
+	if(document.form1.cpass.value=="")
+	{
+	alert("Enter the Confirm Password");
+	document.form1.cpass.focus();
+	return false;
+	}
+	if(document.form1.pass.value!=document.form1.cpass.value)
+	{
+	alert("Password does not match!");
+	document.form1.cpass.select();
+	return false;
+	}
+return true;
+}
+</script>
+</head>
+
+<body id="body">
+      <header id="header">
+  <div class="container">
+
+    <div id="logo" class="pull-left">
+     <h1><a href="" id="body" class="scrollto"><span style="font-weight:bold">Agri Vehicle</span> Rental</a></h1> 
+     <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+   </div>
+   <div class="pull-left ml-4">
+    <!-- SEARCH FORM -->
+    <!--<form class="form-inline "  action="search.php" method="post">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="text"  name="searchdata" placeholder="Search Vehicle" aria-label="Search" required="true">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" style="background-color: #49a3ff;" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>-->
+  </div>
+
+
+  <nav id="nav-menu-container">
+    <ul class="nav-menu">
+      <li class="menu-active"><a href="/">Home</a></li>
+      <li><a href="/login_pro">Provider</a></li>
+      <li><a href="/login_admin">Admin</a></li>
+      
+         <!--   <li class="menu-has-children"><a href="">link</a>
+              <ul>
+                <li><a href="profile.php">Profile Settings</a></li>
+                <li><a href="update_password.php">Update Password</a></li>
+                <li><a href="my_booking.php">My Booking</a></li>
+				 <li><a href="payment.php">Payment</a></li>
+                <li><a href="logout.php">Sign Out</a></li>
+              </ul>
+            </li>-->
+         
+    </ul>
+  </nav><!-- #nav-menu-container -->
+</div>
+  </header><!-- #header -->
+  
+    <section id="hero" class="clearfix">
+      <div class="container">
+
+        <div class="hero-banner">
+        </div>
+
+        <div class="hero-content">
+          <div>
+          
+              <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="btn-banner">Farmer Login / Register</a> 
+           
+         </div>
+       </div>
+
+     </div> 
+   </section><!-- #Hero -->
+
+   <main id="main">
+    <!--==========================
+      Services Section
+      ============================-->
+      <section id="services">
+        <div class="container">
+          <div class="section-header">
+            <h2>Find the Agri Vehicle for you</h2>
+            <p>Agricultural Vehicle is a vehicle or truck-tractor trailer are provide for rental to Farmers for farming business and used exclusively in agricultural operations to transport agricultural products.</p>
+          </div>
+
+          <div class="row">
+           
+              <div class="col-lg-4">
+                <div class="box wow  fadeInLeft">
+                  <div class="car-info-box">
+                    <a href=""><img src="../static/img/ag1.jpg" style="height: 180px; width: 280px;" class="img-responsive"  alt="image" >
+                    </a>
+                    <ul style=" width: 280px;">
+                      <li><i class="fa fa-car" aria-hidden="true"></i>Tractor</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-user" aria-hidden="true"></i></li>
+                    </ul>
+                    <div class="car-title-m">
+                      <h6><a href="">Provider</a></h6>
+                      <span class="price">Rs. 200 / Day</span> 
+                    </div>
+                    <div class="inventory_info_m ">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+			  <div class="col-lg-4">
+                <div class="box wow  fadeInLeft">
+                  <div class="car-info-box">
+                    <a href=""><img src="../static/img/ag2.jpg" style="height: 180px; width: 280px;" class="img-responsive"  alt="image" >
+                    </a>
+                    <ul style=" width: 280px;">
+                      <li><i class="fa fa-car" aria-hidden="true"></i>Tractor</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-user" aria-hidden="true"></i></li>
+                    </ul>
+                    <div class="car-title-m">
+                      <h6><a href="">Provider</a></h6>
+                      <span class="price">Rs. 200 / Day</span> 
+                    </div>
+                    <div class="inventory_info_m ">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+			  <div class="col-lg-4">
+                <div class="box wow  fadeInLeft">
+                  <div class="car-info-box">
+                    <a href=""><img src="../static/img/ag3.jpg" style="height: 180px; width: 280px;" class="img-responsive"  alt="image" >
+                    </a>
+                    <ul style=" width: 280px;">
+                      <li><i class="fa fa-car" aria-hidden="true"></i>Tractor</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-user" aria-hidden="true"></i></li>
+                    </ul>
+                    <div class="car-title-m">
+                      <h6><a href="">Provider</a></h6>
+                      <span class="price">Rs. 200 / Day</span> 
+                    </div>
+                    <div class="inventory_info_m ">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+			 
+        </div>
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+      Clients Section
+      ============================-->
+      <section id="clients" class="wow fadeInUp">
+        <div class="container">
+          <div class="section-header">
+            <h2>Farmers</h2>
+            <p>It is a smartest way to track and manage the farm equipment on rent from vehicle providers. Now Farmer can save and earn more through the an agriculture.</p>
+          </div>
+
+         
+
+        </div>
+      </section><!-- #clients --> 
+   
+      <section id="call-to-action" class="wow fadeInUp">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 text-center text-lg-left">
+              <h3 class="cta-title">Get Our Service</h3>
+              <p class="cta-text">Agricultural Vehicle is a vehicle or truck-tractor trailer are provide for rental to Farmers.</p>
+            </div>
+            <div class="col-lg-3 cta-btn-container text-center">
+              <a class="cta-btn align-middle" href="contact.php">Contact Us</a>
+            </div>
+          </div>
+
+        </div>
+      </section><!-- #call-to-action -->
+
+
+    </main>
+
+  <!--==========================
+    Footer
+    ============================-->
+   <footer id="footer">
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong>Agriculture Vehicle Booking System</strong>.
+    </div>
+  </div>
+</footer>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!--Login-Form -->
+    <div id="loginform" class="modal fade">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Farmer Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+         <div class="row">
+          <div class="login_wrap">
+            <div class="col-md-12 col-sm-6">
+			{% if msg=="no" %}
+			<script language="javascript">
+			alert("Invalid Username or Password!");
+			</script>
+			{% endif %}
+              <form name="form2" method="post">
+                <div class="form-group">
+				<input type="hidden" name="page" value="login">
+                  <input type="text" class="form-control" name="uname" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="pass" placeholder="Password" required>
+                </div>
+                <div class="form-group checkbox">
+                  <input type="checkbox" id="remember">
+               
+                </div>
+                <div class="form-group">
+                  <input type="submit" name="login" value="Login" class="btn btn-block" style="background-color: #49a3ff;">
+                </div>
+              </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer ">
+        <p>Don't have an account? <a href="#signupform" data-toggle="modal" data-dismiss="modal" style="color: #49a3ff;">Signup Here</a></p>&nbsp;
+        <p><a href="#forgotpassword" data-toggle="modal" data-dismiss="modal" style="color: #49a3ff;">Forgot Password ?</a></p>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+</div>
+    <!--/Login-Form --> 
+
+    <!--Register-Form -->
+    <div id="signupform" class="modal fade">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+         <div class="row">
+          <div class="signup_wrap">
+            <div class="col-md-12 col-sm-6">
+			{% if msg=="success" %}
+			<script language="javascript">
+			alert("Registered Successfully");
+			window.location.href="/";
+			</script>
+			{% endif %}
+			{% if msg=="fail" %}
+			<script language="javascript">
+			alert("Username / Email Already Exist!");
+			
+			</script>
+			{% endif %}
+              <form name="form1" method="post">
+                <div class="form-group">
+				<input type="hidden" name="page" value="reg">
+                  <input type="text" class="form-control" name="name" placeholder="Name">
+                </div>
+				<div class="form-group">
+                  <input type="text" class="form-control" name="address" placeholder="Address">
+                </div>
+				<div class="form-group">
+                  <input type="text" class="form-control" name="district" placeholder="District">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="mobile" placeholder="Mobile Number" maxlength="10">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="email" placeholder="Email Address">
+                </div>
+				<div class="form-group">
+                  <input type="password" class="form-control" name="uname" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="pass" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="cpass" placeholder="Confirm Password">
+                </div>
+               
+                <div class="form-group">
+                  <input type="submit" value="Sign Up" name="signup" id="submit" class="btn btn-block" style="background-color: #49a3ff;" onClick="return validate()">
+                </div>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer ">
+         <p>Already got an account? <a href="#loginform" data-toggle="modal" data-dismiss="modal">Login Here</a></p>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+</div>
+
+    <!--/Register-Form --> 
+
+    <!--Forgot-password-Form -->
+   
+
+
+<div id="forgotpassword" class="modal fade">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Password Recovery</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+       <div class="row">
+        <div class="login_wrap">
+          <div class="col-md-12 col-sm-6">
+           <form name="form3" method="post">
+            <div class="form-group">
+			<input type="hidden" name="page" value="forgot">
+              <input type="email" name="email" class="form-control" placeholder="Your Email address*" required="">
+            </div>
+            <div class="form-group">
+              <input type="text" name="mobile" class="form-control" placeholder="Your Reg. Mobile*" required="">
+            </div>
+            <div class="form-group">
+              <input type="password" name="newpassword" class="form-control" placeholder="New Password*" required="">
+            </div>
+            <div class="form-group">
+              <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password*" required="">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Reset My Password" name="update" class="btn btn-block" style="background-color: #49a3ff;">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer ">
+    <p><a href="#loginform" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Back to Login</a></p>
+  </div>
+  <!-- /.modal-content -->
+</div>
+
+
+    <!-- JavaScript  -->
+    <script src="../static/lib/jquery/jquery.min.js"></script>
+    <script src="../static/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/lib/easing/easing.min.js"></script>
+    <script src="../static/lib/superfish/hoverIntent.js"></script>
+    <script src="../static/lib/superfish/superfish.min.js"></script>
+    <script src="../static/lib/wow/wow.min.js"></script>
+    <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../static/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="../static/lib/sticky/sticky.js"></script> 
+    <script src="../static/contact/jqBootstrapValidation.js"></script>
+    <script src="../static/contact/contact_me.js"></script>
+    <script src="../static/js/main.js"></script>
+
+  </body>
+  </html>

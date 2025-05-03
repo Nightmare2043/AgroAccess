@@ -1,0 +1,328 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Agriculture Vehicle Booking System</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <meta content="Author" name="WebThemez">
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/font/font-awesome.css" rel="stylesheet" /> 
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet"> 
+</head>
+
+<body id="body">
+     <?php include('includes/header.php');?>
+  
+    <section id="hero" class="clearfix">
+      <div class="container">
+
+        <div class="hero-banner">
+        </div>
+
+        <div class="hero-content">
+          <div>
+          
+              <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="btn-banner">Login / Register</a> 
+           
+         </div>
+       </div>
+
+     </div> 
+   </section><!-- #Hero -->
+
+   <main id="main">
+    <!--==========================
+      Services Section
+      ============================-->
+      <section id="services">
+        <div class="container">
+          <div class="section-header">
+            <h2>Find the Best Vehicle for you</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          </div>
+
+          <div class="row">
+           <?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand order by rand() limit 9 ";
+           $query = $dbh -> prepare($sql);
+           $query->execute();
+           $results=$query->fetchAll(PDO::FETCH_OBJ);
+           $cnt=1;
+           if($query->rowCount() > 0)
+           {
+            foreach($results as $result)
+            {  
+              ?> 
+              <div class="col-lg-4">
+                <div class="box wow  fadeInLeft">
+                  <div class="car-info-box">
+                    <a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" style="height: 180px; width: 280px;" class="img-responsive"  alt="image" >
+                    </a>
+                    <ul style=" width: 280px;">
+                      <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> Model</li>
+                      <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
+                    </ul>
+                    <div class="car-title-m">
+                      <h6><a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>"> <?php echo substr($result->VehiclesTitle,0,21);?></a></h6>
+                      <span class="price"><?php echo htmlentities($result->PricePerDay);?> /Hour</span> 
+                    </div>
+                    <div class="inventory_info_m ">
+                      <p><?php echo substr($result->VehiclesOverview,0,70);?></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php 
+            }
+          }?>
+        </div>
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+      Clients Section
+      ============================-->
+      <section id="clients" class="wow fadeInUp">
+        <div class="container">
+          <div class="section-header">
+            <h2>Clients</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          </div>
+
+          <div class="owl-carousel clients-carousel">
+            <img src="img/clients/client-1.png" alt="">
+            <img src="img/clients/client-2.png" alt="">
+            <img src="img/clients/client-3.png" alt="">
+            <img src="img/clients/client-4.png" alt="">
+            <img src="img/clients/client-5.png" alt="">
+            <img src="img/clients/client-6.png" alt="">
+          </div>
+
+        </div>
+      </section><!-- #clients --> 
+   
+      <section id="call-to-action" class="wow fadeInUp">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 text-center text-lg-left">
+              <h3 class="cta-title">Get Our Service</h3>
+              <p class="cta-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-lg-3 cta-btn-container text-center">
+              <a class="cta-btn align-middle" href="contact.php">Contact Us</a>
+            </div>
+          </div>
+
+        </div>
+      </section><!-- #call-to-action -->
+
+
+    </main>
+
+  <!--==========================
+    Footer
+    ============================-->
+   <footer id="footer">
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong>Agriculture Vehicle Booking System</strong>. All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!--Login-Form -->
+    <div id="loginform" class="modal fade">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+         <div class="row">
+          <div class="login_wrap">
+            <div class="col-md-12 col-sm-6">
+              <form method="post">
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" placeholder="Email address*">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="password" placeholder="Password*">
+                </div>
+                <div class="form-group checkbox">
+                  <input type="checkbox" id="remember">
+               
+                </div>
+                <div class="form-group">
+                  <input type="submit" name="login" value="Login" class="btn btn-block" style="background-color: #49a3ff;">
+                </div>
+              </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer ">
+        <p>Don't have an account? <a href="#signupform" data-toggle="modal" data-dismiss="modal" style="color: #49a3ff;">Signup Here</a></p>&nbsp;
+        <p><a href="#forgotpassword" data-toggle="modal" data-dismiss="modal" style="color: #49a3ff;">Forgot Password ?</a></p>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+</div>
+    <!--/Login-Form --> 
+
+    <!--Register-Form -->
+    <div id="signupform" class="modal fade">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+         <div class="row">
+          <div class="signup_wrap">
+            <div class="col-md-12 col-sm-6">
+              <form  method="post" name="signup" onSubmit="return valid();">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="fullname" placeholder="Full Name" required="required">
+                </div>
+                      <div class="form-group">
+                  <input type="text" class="form-control" name="mobileno" placeholder="Mobile Number" maxlength="10" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="emailid" id="emailid" onBlur="checkAvailability()" placeholder="Email Address" required="required">
+                   <span id="user-availability-status" style="font-size:12px;"></span> 
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" required="required">
+                </div>
+                <div class="form-group checkbox">
+                  <input type="checkbox" id="terms_agree" required="required" checked="">
+                  <label for="terms_agree">I Agree with <a href="#">Terms and Conditions</a></label>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Sign Up" name="signup" id="submit" class="btn btn-block" style="background-color: #49a3ff;">
+                </div>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer ">
+         <p>Already got an account? <a href="#loginform" data-toggle="modal" data-dismiss="modal">Login Here</a></p>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+</div>
+
+    <!--/Register-Form --> 
+
+    <!--Forgot-password-Form -->
+    <script type="text/javascript">
+  function valid()
+  {
+    if(document.chngpwd.newpassword.value!= document.chngpwd.confirmpassword.value)
+    {
+      alert("New Password and Confirm Password Field do not match  !!");
+      document.chngpwd.confirmpassword.focus();
+      return false;
+    }
+    return true;
+  }
+</script>
+
+
+
+<div id="forgotpassword" class="modal fade">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Password Recovery</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+       <div class="row">
+        <div class="login_wrap">
+          <div class="col-md-12 col-sm-6">
+           <form name="chngpwd" method="post" onSubmit="return valid();">
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Your Email address*" required="">
+            </div>
+            <div class="form-group">
+              <input type="text" name="mobile" class="form-control" placeholder="Your Reg. Mobile*" required="">
+            </div>
+            <div class="form-group">
+              <input type="password" name="newpassword" class="form-control" placeholder="New Password*" required="">
+            </div>
+            <div class="form-group">
+              <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password*" required="">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Reset My Password" name="update" class="btn btn-block" style="background-color: #49a3ff;">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer ">
+    <p><a href="#loginform" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Back to Login</a></p>
+  </div>
+  <!-- /.modal-content -->
+</div>
+
+
+    <!-- JavaScript  -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="lib/sticky/sticky.js"></script> 
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+  </html>
